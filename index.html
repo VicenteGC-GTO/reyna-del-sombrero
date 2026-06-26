@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reyna del Sombrero</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="logo">👑 Reyna del Sombrero</div>
+    <ul class="nav-links">
+      <li><a href="#inicio">Inicio / Home</a></li>
+      <li><a href="#catalogo">Catálogo / Catalog</a></li>
+      <li><a href="#nosotros">Nosotros / About</a></li>
+      <li><a href="#contacto">Contacto / Contact</a></li>
+    </ul>
+    <button class="cart-btn" onclick="scrollToCart()">🛒 Carrito (<span id="cart-count">0</span>)</button>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="inicio">
+    <div class="hero-content">
+      <div class="hero-crown">🎩</div>
+      <p class="hero-sub">Hecho en León, Guanajuato · Vendido en Acámbaro</p>
+      <h1>Reyna del <span>Sombrero</span></h1>
+      <p class="hero-desc">
+        Sombreros artesanales de la más alta calidad, traídos directamente desde León, Guanajuato hasta Acámbaro. 
+        Elegancia y tradición mexicana en cada pieza. / Handcrafted hats of the highest quality, brought directly from León, Guanajuato.
+      </p>
+      <div class="hero-btns">
+        <button class="btn-primary" onclick="document.getElementById('catalogo').scrollIntoView({behavior:'smooth'})">
+          Ver Catálogo / Shop Now
+        </button>
+        <button class="btn-secondary" onclick="document.getElementById('nosotros').scrollIntoView({behavior:'smooth'})">
+          Nuestra Historia / Our Story
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATALOG -->
+  <section class="catalog" id="catalogo">
+    <div class="catalog-header">
+      <p class="section-label">Colección / Collection</p>
+      <h2 class="section-title">Nuestros Sombreros</h2>
+      <p class="section-desc">
+        Cada sombrero es una obra de arte. Fabricados a mano por maestros artesanos de León, Guanajuato. / 
+        Each hat is a work of art, handmade by master craftsmen.
+      </p>
+    </div>
+    <div class="products-grid" id="products-grid"></div>
+  </section>
+
+  <!-- CART -->
+  <section class="cart-section" id="carrito">
+    <div class="cart-container">
+      <p class="section-label">Tu selección / Your selection</p>
+      <h2 class="section-title">Carrito / Cart</h2>
+      <div id="cart-items"></div>
+      <div id="cart-total"></div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="nosotros">
+    <div class="about-grid">
+      <div>
+        <p class="section-label">Nuestra Historia / Our Story</p>
+        <h2 class="section-title">Reyna, la artesana detrás del sombrero</h2>
+        <p class="about-text">
+          Somos una pequeña empresa familiar con años de experiencia trayendo los mejores sombreros artesanales 
+          desde León, Guanajuato hasta Acámbaro. / We are a small family business with years of experience 
+          bringing the finest handcrafted hats from León, Guanajuato to Acámbaro.
+        </p>
+        <p class="about-text">
+          Cada sombrero que vendemos ha sido cuidadosamente seleccionado por Reyna, quien garantiza la más alta 
+          calidad en cada pieza. / Every hat we sell has been carefully selected by Reyna, who guarantees the 
+          highest quality in each piece.
+        </p>
+        <div class="about-stats">
+          <div class="stat"><div class="stat-num">10+</div><div class="stat-label">Años de experiencia</div></div>
+          <div class="stat"><div class="stat-num">500+</div><div class="stat-label">Clientes felices</div></div>
+          <div class="stat"><div class="stat-num">León</div><div class="stat-label">Guanajuato</div></div>
+          <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Artesanal</div></div>
+        </div>
+      </div>
+      <div class="about-visual">🎩</div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contacto">
+    <div class="contact-grid">
+      <div>
+        <p class="section-label">Encuéntranos / Find Us</p>
+        <h2 class="section-title">Contacto / Contact</h2>
+        <div class="contact-info">
+          <div class="contact-item">
+            <span class="contact-icon">📍</span>
+            <div class="contact-detail">
+              <h4>Ubicación / Location</h4>
+              <p>Acámbaro, Guanajuato, México<br>Sombreros de León, Gto.</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon">📱</span>
+            <div class="contact-detail">
+              <h4>WhatsApp</h4>
+              <p>Contáctanos para pedidos especiales<br>Contact us for special orders</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon">🕐</span>
+            <div class="contact-detail">
+              <h4>Horario / Hours</h4>
+              <p>Lunes - Sábado: 9am - 7pm<br>Monday - Saturday: 9am - 7pm</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <p class="section-label">Escríbenos / Write to Us</p>
+        <h2 class="section-title">¿Tienes preguntas?</h2>
+        <div class="contact-form">
+          <input class="form-input" type="text" placeholder="Tu nombre / Your name">
+          <input class="form-input" type="email" placeholder="Tu correo / Your email">
+          <input class="form-input" type="text" placeholder="Asunto / Subject">
+          <textarea class="form-input" placeholder="Tu mensaje / Your message"></textarea>
+          <button class="form-btn">Enviar mensaje / Send message</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 <span>Reyna del Sombrero</span> · Acámbaro, Guanajuato · Hecho con ❤️ en México</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
