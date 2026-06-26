@@ -2,6 +2,12 @@
 // REYNA DEL SOMBRERO - app.js
 // ================================
 
+// ================================
+// EMAILJS CONFIGURATION
+// ================================
+// ⬇️ PEGA TU PUBLIC KEY AQUÍ ⬇️
+emailjs.init("4jh3P4taCUmWOj27f");
+
 // Array de productos
 const products = [
   { id: 1, name: 'Sombrero Charro', nameEn: 'Charro Hat', price: 850, emoji: '🤠', badge: 'Popular', origin: 'León, Gto.' },
@@ -93,6 +99,47 @@ function updateCart() {
 function scrollToCart() {
   document.getElementById('carrito').scrollIntoView({ behavior: 'smooth' });
 }
+
+// ================================
+// EMAILJS - FORMULARIO DE CONTACTO
+// ================================
+document.querySelector('.form-btn').addEventListener('click', function() {
+  const from_name = document.querySelectorAll('.form-input')[0].value;
+  const from_email = document.querySelectorAll('.form-input')[1].value;
+  const subject = document.querySelectorAll('.form-input')[2].value;
+  const message = document.querySelector('textarea.form-input').value;
+
+  // Validar que todos los campos estén llenos
+  if (!from_name || !from_email || !subject || !message) {
+    alert('Por favor llena todos los campos / Please fill all fields');
+    return;
+  }
+
+  // Cambiar texto del botón mientras envía
+  const btn = document.querySelector('.form-btn');
+  btn.textContent = 'Enviando... / Sending...';
+  btn.disabled = true;
+
+  // ⬇️ PEGA TU SERVICE ID Y TEMPLATE ID AQUÍ ⬇️
+  emailjs.send("service_0nt7rsm", "template_0zsmme5", {
+    from_name: from_name,
+    from_email: from_email,
+    subject: subject,
+    message: message
+  })
+  .then(function() {
+    alert('¡Mensaje enviado con éxito! / Message sent successfully! ✅');
+    // Limpiar el formulario
+    document.querySelectorAll('.form-input').forEach(input => input.value = '');
+    btn.textContent = 'Enviar mensaje / Send message';
+    btn.disabled = false;
+  })
+  .catch(function(error) {
+    alert('Error al enviar / Error sending: ' + error);
+    btn.textContent = 'Enviar mensaje / Send message';
+    btn.disabled = false;
+  });
+});
 
 // Iniciar la página
 renderProducts();
