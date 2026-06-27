@@ -350,4 +350,5 @@ footer span { color: var(--dorado); }
 .whatsapp-btn img {
   width: 35px;
   height: 35px;
+  filter: brightness(0) invert(1);
 }
