@@ -332,7 +332,7 @@ footer span { color: var(--dorado); }
   right: 2rem;
   width: 60px;
   height: 60px;
-  background: #25D366;
+  background: #25D366 !important;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -340,9 +340,16 @@ footer span { color: var(--dorado); }
   box-shadow: 0 4px 15px rgba(37,211,102,0.4);
   z-index: 999;
   transition: all 0.3s;
-  text-decoration: none;  /* ← quita el subrayado */
-  color: white;           /* ← texto blanco */
+  text-decoration: none !important;
+  color: white !important;
   font-weight: 700;
   font-size: 1rem;
   letter-spacing: 1px;
+}
+
+.whatsapp-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(37,211,102,0.6);
+  text-decoration: none !important;
+  color: white !important;
 }
